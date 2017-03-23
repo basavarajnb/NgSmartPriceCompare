@@ -1,8 +1,8 @@
-<h1>
-  {{title}}
+<div class="bodyContainer container-fluid">
+<app-banner [brandName]="brandName"></app-banner>
+<app-search-bar></app-search-bar>
 
-  <button class="btn btn-primary">Test Button</button>
-</h1>
+</div>
 
 <button md-raised-button>
   Angular Material works!
@@ -11,5 +11,9 @@
 
 <a md-raised-button routerLink=".">Raised button</a>
 
-<a md-fab routerLink="."><md-icon>check</md-icon></a>
-    <a md-mini-fab routerLink="."><md-icon>check</md-icon></a>
+<a md-fab routerLink=".">
+  <md-icon>check</md-icon>
+</a>
+<a md-mini-fab routerLink=".">
+  <md-icon>check</md-icon>
+</a>

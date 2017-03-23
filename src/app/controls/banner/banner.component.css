@@ -1,0 +1,15 @@
+.logo-image {
+    height: 40px;
+    width: 40px;
+}
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.banner-container {
+}
+
+.banner {
+    border: 1px solid black;
+}
