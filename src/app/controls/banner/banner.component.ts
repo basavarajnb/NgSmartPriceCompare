@@ -13,4 +13,11 @@ export class BannerComponent implements OnInit {
   ngOnInit() {
   }
 
+  onButtonClick () {
+    alert("Return to Home");
+  }
+  onSignInClick() {
+    alert("Sign In Is Clicked");    
+  }
+
 }

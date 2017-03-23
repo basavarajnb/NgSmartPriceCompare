@@ -3,9 +3,9 @@
     <div class="row justify-content-center py-1">
       <div class="col-8">
         <div class="input-group">
-          <input type="text" class="form-control py-1" placeholder="Search for...">
+          <input type="text" #searchBox class="form-control py-1" placeholder="Search for...">
           <span class="input-group-btn">
-              <button class="btn btn-secondary py-0" type="button">
+              <button class="btn btn-secondary py-0" type="button" (click) = "onSearchClick(searchBox.value)">
                 <md-icon class="align-middle">search</md-icon>
               </button>
             </span>
@@ -14,3 +14,13 @@
     </div>
   </div>
 </div>
+
+<!--<md-input-container>
+  <input mdInput placeholder="State" [mdAutocomplete]="auto" [formControl]="stateCtrl">
+</md-input-container>
+
+<md-autocomplete #auto="mdAutocomplete">
+  <md-option *ngFor="let state of filteredStates | async" [value]="state">
+    {{ state }}
+  </md-option>
+</md-autocomplete>-->

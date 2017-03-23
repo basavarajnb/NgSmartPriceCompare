@@ -3,15 +3,22 @@
     <div class="row py-1">
       <div class="col-6">
         <div class="input-group">
-          <img class="logo-image" src="../assets/images/logo.png" alt="logo" />
-          <span class="btn py-1" id="">
-              <span class="brand-name">{{brandName}}</span>
-          </span>
+          <div class="">
+            <button (click) ="onButtonClick()" >
+             <img class="logo-image d-inline-block" src="../assets/images/logo.png" alt="logo" />
+              <span class="btn py-1 px-1 d-inline-block" id="">
+                  <span class="brand-name">{{brandName}}</span>
+              </span>
+            </button>
+          </div>
         </div>
       </div>
-      <div class="col-6 text-right  align-middle align-self-center">
-        <input type="button" class="btn pr-2 d-inline-block align-self-center" value="sign-in" />
-        <input type="button" class="btn pr-2 d-inline-block align-self-center" value="Register" />
+      <div class="col-6 text-right align-middle align-self-center">
+        <div class="">
+          <a md-button (click) ="onSignInClick()" routerLink="." class="no-decoration">Sign In
+            <md-icon class="align-middle">person</md-icon>
+          </a>
+        </div>
       </div>
     </div>
   </div>
