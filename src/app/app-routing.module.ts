@@ -14,14 +14,12 @@ const appRoutes: Routes = [
     path: 'crisis-center',
     loadChildren: 'app/crisis-center/crisis-center.module#CrisisCenterModule'
   },
-  { path: '',   component: HomeComponent},
+  { path: '',   redirectTo: '', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent }
 ];
 @NgModule({
   imports: [
-    RouterModule.forRoot(
-      appRoutes
-    )
+    RouterModule.forRoot(appRoutes)
   ],
   exports: [
     RouterModule
