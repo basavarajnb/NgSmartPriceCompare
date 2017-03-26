@@ -1,0 +1,12 @@
+<div class="row justify-content-around">
+  <div class="card m-1 mb-4" *ngFor="let item of cardsList">
+    <img class="card-img-top" [src]="item.imageUrl" alt="Card image cap">
+    <div class="card-block p-2">
+      <h6 class="card-title"> {{item.productName}}</h6>
+      <p class="card-text">{{item.price}}</p>
+    </div>
+    <div class="card-footer p-2">
+      <small class="text-muted">{{item.updated}}</small>
+    </div>
+  </div>
+</div>

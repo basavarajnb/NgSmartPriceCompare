@@ -8,7 +8,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './not-found.component';
 
 import { ControlsModule } from './controls/controls.module';
-import { HomeModule } from "app/subsystem/home/home.module";
+import { HomeModule } from "app/subapp/home/home.module";
+import { ProductDetailModule } from "app/subapp/product-detail/product-detail.module";
+import { ProductListModule } from "app/subapp/product-list/product-list.module";
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { HomeModule } from "app/subsystem/home/home.module";
     FormsModule,
     ReactiveFormsModule,
     ControlsModule,
+    ProductDetailModule,
+    ProductListModule,
     HomeModule,
     AppRoutingModule
   ],
@@ -30,8 +34,8 @@ import { HomeModule } from "app/subsystem/home/home.module";
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
-    constructor(router: Router) {
+export class AppModule {
+  constructor(router: Router) {
     console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
   }
 }

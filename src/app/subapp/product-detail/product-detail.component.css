@@ -1,0 +1,43 @@
+
+.border {
+        border: 1px solid darkgray;
+}
+.h1 {
+    font-size: 1.5rem;
+}
+
+.h2 {
+    font-size: 1.25rem;
+}
+
+.h3 {
+    font-size: 1rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.specifiSitePriceContainer {
+    margin-top: 10px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #232f3e;
+    display: inline-block;
+    margin: 0.3em;
+}
+
+.productSpecificHeader {
+    background-color: #232f3e;
+    color: white;
+    padding: 0.3em;
+}
+
+.productPriceText {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.scrollButtons {
+    width: 80%;
+}

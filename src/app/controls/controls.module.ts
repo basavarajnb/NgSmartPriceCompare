@@ -5,6 +5,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { BannerComponent } from './banner/banner.component';
 import { MaterialModule } from "@angular/material";
 import { CollapseComponent } from './collapse/collapse.component';
+import { CardDeckComponent } from './card-deck/card-deck.component';
 
 @NgModule({
   imports: [
@@ -14,13 +15,15 @@ import { CollapseComponent } from './collapse/collapse.component';
   declarations: [
     BannerComponent,
     SearchBarComponent,
-    CollapseComponent
+    CollapseComponent,
+    CardDeckComponent
   ],
   exports: [
     MaterialModule,
     BannerComponent,
     SearchBarComponent,
-    CollapseComponent
+    CollapseComponent,
+    CardDeckComponent
   ]
 })
 export class ControlsModule {

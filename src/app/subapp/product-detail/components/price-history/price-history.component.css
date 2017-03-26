@@ -1,0 +1,14 @@
+.nav-link.active {
+    background-color: #232f3e;
+    color: white;
+}
+.nav-item {
+    border: 1px solid #ddd;
+    border-top-right-radius: 0.25rem;
+    border-top-left-radius: 0.25rem;
+}
+.container-border {
+    border: 1px solid darkgray;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}

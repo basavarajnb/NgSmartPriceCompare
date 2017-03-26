@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
 @import '~https://fonts.googleapis.com/icon?family=Material+Icons';
-
+body {
+    font-family: Roboto,Arial,sans-serif;
+}
 button:focus {
     outline: none;
 }
@@ -19,4 +21,13 @@ button {
 
 a.no-decoration {
     text-decoration: none;
+}
+.h1 {
+    font-size: 1.5rem;
+}
+.h2 {
+    font-size: 1.25rem;
+}
+.h3 {
+    font-size: 1rem;
 }
