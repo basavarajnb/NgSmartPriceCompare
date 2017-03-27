@@ -1,14 +1,22 @@
 <div class="productDetailContainer container-fluid">
   <div class="row">
-    <div class="col-sm-12 col-md-6 col-lg-4 p-2  text-center border" style="max-height: 30rem">
+    <div class="col-sm-12 col-md-6 col-lg-4 p-2  text-center border">
       <img class="img-fluid" src="../assets/images/img400.png" alt="image" />
     </div>
     <div class="col-sm-12 col-md-12 col-lg-6 p-2 border">
       <span style="font-size: .75rem;">Brand Name</span>
-      <h2 style="font-size: 1.25rem;">Product Name</h2>
-      <span class="d-block"><h2 style="font-size: 1.25rem;" class="d-inline-block">200</h2> <small class="align-middle">Updated on 5th March</small> </span>
-      <span class="d-block"><h2 style="font-size: 1.25rem;" class="d-inline-block">Lowest Price: 100</h2> <small class="align-middle">Updated on 1st March</small> </span>
-      <h3 style="font-size: 1rem;">Rating: 4.5</h3>
+      <h1 style="font-size: 1.5rem;">Product Name</h1>
+      <div>
+        <div class="ratings-container">
+          <span id="product-rating-text">4.1</span>
+          <span>★</span>
+        </div>
+        <div class="review-count-container">
+          <a href="" id="review-count-text">20,000 Reviews</a>
+          <a href="">1,50,000 Ratings</a>
+        </div>
+      </div>
+      <span class="d-block"><h2 style="font-size: 2rem;padding-top: 8px;" class="d-inline-block">200</h2> <small class="align-middle">Updated on 5th March</small> </span>
       <h3 style="font-size: 1rem;">In Stock: YES</h3>
       <h3 style="font-size: 1rem;">Color Varients:</h3>
       <ul class="list-inline pl-2">
@@ -20,6 +28,9 @@
         <li class="list-inline-item">64 GB</li>
         <li class="list-inline-item">Blue</li>
       </ul>
+      <hr/>
+      <span class="d-block"><h2 tyle="font-size: 2rem;" class="d-inline-block">Lowest Price: 100</h2> <small class="align-middle">Updated on 1st March</small> </span>
+
 
       <div class="">
         <div class="specifiSitePriceContainer">
@@ -50,7 +61,7 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-12 col-md-12 col-lg-2 p-2  border" style="max-height: 30rem">
+    <div class="col-sm-12 col-md-12 col-lg-2 p-2  border">
       <div class="scrollButtonsContainer text-center">
         <a md-raised-button class="scrollButtons my-2" [routerLink]="['./']" fragment="priceHistoryContainer">Price History </a>
         <a md-raised-button class="scrollButtons my-2" [routerLink]="['./']" fragment="productSpecContainer">Product Specs </a>

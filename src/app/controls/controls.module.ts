@@ -6,6 +6,7 @@ import { BannerComponent } from './banner/banner.component';
 import { MaterialModule } from "@angular/material";
 import { CollapseComponent } from './collapse/collapse.component';
 import { CardDeckComponent } from './card-deck/card-deck.component';
+import { SideNavbarComponent } from './side-navbar/side-navbar.component';
 
 @NgModule({
   imports: [
@@ -16,14 +17,16 @@ import { CardDeckComponent } from './card-deck/card-deck.component';
     BannerComponent,
     SearchBarComponent,
     CollapseComponent,
-    CardDeckComponent
+    CardDeckComponent,
+    SideNavbarComponent
   ],
   exports: [
     MaterialModule,
     BannerComponent,
     SearchBarComponent,
     CollapseComponent,
-    CardDeckComponent
+    CardDeckComponent,
+    SideNavbarComponent
   ]
 })
 export class ControlsModule {

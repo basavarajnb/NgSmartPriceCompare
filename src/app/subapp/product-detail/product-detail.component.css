@@ -41,3 +41,19 @@ ul {
 .scrollButtons {
     width: 80%;
 }
+
+.ratings-container {
+    background-color: green;
+    border-radius: 3px;
+    color: white;
+    display: inline-block;
+    line-height: 1rem;
+    font-size: .75rem;
+    padding: 2px 3px;
+}
+.review-count-container {
+    display: inline-block;
+    line-height: 1rem;
+    font-size: .75rem;
+    padding: 2px 3px;
+}
