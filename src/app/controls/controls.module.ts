@@ -7,6 +7,7 @@ import { MaterialModule } from "@angular/material";
 import { CollapseComponent } from './collapse/collapse.component';
 import { CardDeckComponent } from './card-deck/card-deck.component';
 import { SideNavbarComponent } from './side-navbar/side-navbar.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { SideNavbarComponent } from './side-navbar/side-navbar.component';
     SearchBarComponent,
     CollapseComponent,
     CardDeckComponent,
-    SideNavbarComponent
+    SideNavbarComponent,
+    ProductCardComponent
   ],
   exports: [
     MaterialModule,
@@ -26,7 +28,8 @@ import { SideNavbarComponent } from './side-navbar/side-navbar.component';
     SearchBarComponent,
     CollapseComponent,
     CardDeckComponent,
-    SideNavbarComponent
+    SideNavbarComponent,
+    ProductCardComponent
   ]
 })
 export class ControlsModule {

@@ -1,5 +1,7 @@
 .card-img-top {
-    max-width: 230px;
+    max-width: 100%;
+	height: auto;
+	width: auto; 
 }
 .card-title {
     max-width: 220px;

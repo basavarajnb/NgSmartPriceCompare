@@ -13,7 +13,7 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit() {
     let id = this.route.snapshot.params['id'];
-    // alert("Param ID => "+ id);
+     alert("Param ID => "+ id);
   }
 
 }

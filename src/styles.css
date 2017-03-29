@@ -7,6 +7,9 @@ body {
 button:focus {
     outline: none;
 }
+.border {
+    border: 1px solid black;
+}
 button {
     background-color: transparent;
     border: none;

@@ -1,16 +1,16 @@
-<div class="product-list-container container-fluid">
-  <div class="row my-3">
-    <div *ngFor="let item of productList" class="col-sp-12 col-md-6 col-lg-3 p-1">
-      <div class="card  ">
-        <img alt="Card image cap" class="card-img-top" [src]="item.imageUrl">
-        <div class="card-block p-2">
-          <h6 class="card-title">item.name</h6>
-          <p class="card-text">item.price</p>
-        </div>
-        <div class="card-footer p-2">
-          <small class="text-muted">item.updated</small>
-        </div>
-      </div>
+<md-sidenav-container>
+  <md-sidenav #sidenav [mode]="navBarMode" opened="false">
+    <app-products-filter></app-products-filter>
+  </md-sidenav>
+  <div class="product-list-container">
+    <div class="product-list-heading py-1">
+      <a class="d-inline-block align-middle" style="width: 25px; cursor: pointer; user-select: none;" (click)="toggleSidebar()">
+        <md-icon>menu</md-icon>
+      </a>
+      <h1 class="d-inline-block" style="font-size: 1.5rem;">Product List</h1>
+    </div>
+    <div class="card-deck-container">
+      <app-card-deck [productList]="productList"></app-card-deck>
     </div>
   </div>
-</div>
+</md-sidenav-container>

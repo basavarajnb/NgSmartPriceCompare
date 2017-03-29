@@ -1,21 +1,36 @@
-<div class="container-fluid py-0">
-  <app-collapse [collapseVisible]="true">
-    <span collase-panel-title class="align-middle">Sample Accordian</span>
-    <div collase-panel-content>
-      <app-card-deck [cardsList]="cardDetails"></app-card-deck>
-    </div>
-  </app-collapse>
-</div>
-
-
-
-<div class="detailContainer my-2">
-  <div class="row justify-content-around text-center">
-    <div class="col-sm-12 col-md-12 col-lg-6 my-2">
-      <img class="mx-auto" src="../../../assets/images/img400.png" alt="image" />
-    </div>
-    <div class="col-sm-12 col-md-12 col-lg-6">
-      <img class="mx-auto" src="../../../assets/images/img400.png" alt="image" />
+<md-sidenav-container>
+  <md-sidenav #sidenav [mode]="navBarMode" opened="false">
+    <app-side-navbar></app-side-navbar>
+  </md-sidenav>
+  <div class="container-fluid px-0 py-2">
+    <div class="home-page">
+      <div class="home-heading-container py-1">
+        <a class="d-inline-block align-middle" style="width: 25px; cursor: pointer; user-select: none;" (click)="toggleSidebar()">
+          <md-icon>menu</md-icon>
+        </a>
+        <h1 class="d-inline-block" style="font-size: 1.5rem;">Choose from the varieties</h1>
+      </div>
+      <div class="collapse-container">
+        <app-collapse [collapseVisible]="true">
+          <span collase-panel-title class="align-middle">Sample Accordian</span>
+          <div collase-panel-content>
+            <app-card-deck [productList]="cardDetails"></app-card-deck>
+          </div>
+        </app-collapse>
+      </div>
     </div>
   </div>
-</div>
+
+
+
+  <div class=" container-fluid detailContainer">
+    <div class="row justify-content-around text-center">
+      <div class="col-sm-12 col-md-12 col-lg-6 my-2">
+        <img class="mx-auto" src="../../../assets/images/img400.png" alt="image" />
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-6">
+        <img class="mx-auto" src="../../../assets/images/img400.png" alt="image" />
+      </div>
+    </div>
+  </div>
+</md-sidenav-container>
