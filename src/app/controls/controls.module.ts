@@ -8,10 +8,12 @@ import { CollapseComponent } from './collapse/collapse.component';
 import { CardDeckComponent } from './card-deck/card-deck.component';
 import { SideNavbarComponent } from './side-navbar/side-navbar.component';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { RouterModule } from "@angular/router";
 
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
     MaterialModule
   ],
   declarations: [

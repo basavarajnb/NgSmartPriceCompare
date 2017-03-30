@@ -13,6 +13,7 @@ import { ControlsModule } from './controls/controls.module';
 import { HomeModule } from "app/subapp/home/home.module";
 import { ProductDetailModule } from "app/subapp/product-detail/product-detail.module";
 import { ProductListModule } from "app/subapp/product-list/product-list.module";
+import { AuthModule } from "app/auth/auth.module";
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ProductListModule } from "app/subapp/product-list/product-list.module";
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     ControlsModule,
+    AuthModule,
     ProductDetailModule,
     ProductListModule,
     HomeModule,

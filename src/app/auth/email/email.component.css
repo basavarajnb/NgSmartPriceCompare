@@ -1,0 +1,42 @@
+.basic-btn {
+    background: #3B8598;
+    color: white;
+    width: 100%;
+    padding: .3em;
+}
+
+input.txt {
+    padding: .2em .2em;
+    font-size: 1em;
+    border: 1px solid #BBBBBB;
+    margin-bottom: 15px;
+    width: 100%
+}
+
+h2 {
+    margin: 1.5em 0 .9em 0;
+}
+
+.alc {
+    text-align:center;
+    display:block;
+    margin: 15px 0;
+}
+
+.error {
+    background:#f1f0ef;
+    padding:1em;
+    width:100%;
+    display:block;
+    margin-bottom:20px;
+}
+
+#goback {
+    font-weight:bold;
+    text-transform:uppercase;
+    font-size:.8em;
+    color:#3B8598;
+}
+#goback span {
+    font-size:1em;
+}
