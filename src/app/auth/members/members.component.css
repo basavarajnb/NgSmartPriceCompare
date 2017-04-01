@@ -1,7 +1,7 @@
-#toolbar {
-    padding:0;
-    width:70%;
-    margin-left:-35%;
+.members-panel-container {
+    background: white;
+    padding-top: .5em;
+    width: 100%;
 }
 
 header {
@@ -10,8 +10,11 @@ header {
 }
 
 .basic-btn {
-    width:100px;
-    margin:0;
+    background: #3B8598;
+    color: white;
+    width: 100%;
+    padding: 1em;
+    font-size: 1em;
 }
 
 #page {
@@ -31,9 +34,5 @@ h2 {
 @media (max-width: 600px) {
     #page {
         padding:1em;
-    }
-    #toolbar {
-        width:90%;
-        margin-left: -45%;
     }
 }

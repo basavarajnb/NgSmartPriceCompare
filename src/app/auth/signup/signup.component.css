@@ -1,9 +1,15 @@
-.basic-btn {
+.submit-btn {
     background: #3B8598;
     color: white;
     width: 100%;
-    padding: .3em;;
+    padding: 0.75em;
+    font-size: 1em;
 }
+
+.mat-input-container {
+    width: 100%;
+}
+
 
 input.txt {
     padding: .2em .2em;
@@ -14,7 +20,7 @@ input.txt {
 }
 
 h2 {
-    margin: 1.5em 0 .9em 0;
+        margin: 1em 0 1em 0;
 }
 
 .alc {

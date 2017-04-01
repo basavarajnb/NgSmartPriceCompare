@@ -20,6 +20,7 @@ export class MembersComponent implements OnInit {
     this.af.auth.subscribe(auth => {
       if(auth) {
         this.name = auth;
+        console.log(auth);
       }
     });
 

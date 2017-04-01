@@ -7,11 +7,13 @@ import { MembersComponent } from './members/members.component';
 import { AuthGuard } from "app/auth/auth.service";
 import { AuthRoutingModule } from "app/auth/auth-routing.module";
 import { FormsModule } from "@angular/forms";
+import { MaterialModule } from "@angular/material";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    MaterialModule,
     AuthRoutingModule
   ],
   declarations: [
