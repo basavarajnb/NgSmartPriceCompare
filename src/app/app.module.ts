@@ -14,6 +14,8 @@ import { HomeModule } from "app/subapp/home/home.module";
 import { ProductDetailModule } from "app/subapp/product-detail/product-detail.module";
 import { ProductListModule } from "app/subapp/product-list/product-list.module";
 import { AuthModule } from "app/auth/auth.module";
+import { SideNavbarService } from "app/subapp/side-navbar.service";
+import { LoginChangesService } from "app/services/login-changes.service";
 
 @NgModule({
   declarations: [
@@ -36,7 +38,7 @@ import { AuthModule } from "app/auth/auth.module";
   exports: [
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
+  providers: [SideNavbarService, LoginChangesService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

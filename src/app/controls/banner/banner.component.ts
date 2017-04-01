@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { LoginChangesService } from "app/services/login-changes.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-banner',
@@ -7,17 +9,31 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BannerComponent implements OnInit {
   @Input() brandName;
-
-  constructor() { }
+  signInOrOut: string;
+  constructor(private loginchnages: LoginChangesService,
+    private router: Router) { }
 
   ngOnInit() {
+    this.loginchnages.loginChangesSubject.subscribe((isSingedIn) => {
+      if (isSingedIn) {
+        this.signInOrOut = "Sign Out"
+      }
+      else {
+        this.signInOrOut = "Sign In"
+      }
+    });
   }
 
-  onButtonClick () {
+  onButtonClick() {
     alert("Return to Home");
   }
-  onSignInClick() {
-    alert("Sign In Is Clicked");    
+  onSignInorOutClick() {
+    if (this.signInOrOut == "Sign Out") {
+      console.log("Sign Out Button is clicked!");
+      this.loginchnages.signOutClickSubject.next(true);
+    }
+    else {
+      this.router.navigateByUrl('/login');
+    }
   }
-
 }
