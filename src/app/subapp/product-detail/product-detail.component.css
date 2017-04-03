@@ -18,6 +18,12 @@ ul {
     list-style-type: none;
 }
 
+.product-image {
+    max-width: 85%;
+    height: auto;
+
+}
+
 .specifiSitePriceContainer {
     margin-top: 10px;
     text-align: center;

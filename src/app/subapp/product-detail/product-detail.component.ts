@@ -17,13 +17,7 @@ export class ProductDetailComponent implements OnInit {
     let id = this.route.snapshot.params['id'];
     this.productDetails = {};
     this.productDetailService.getProductById("MOBEKGT2SVHPAHTM", "Flipkart").subscribe((productDetails) => {
-      this.productDetails.productId = productDetails.mobileId;
-      this.productDetails.productName = productDetails.mobileName;
-      this.productDetails.productRating = productDetails.mobileRating;
-      this.productDetails.productReviewCount = productDetails.mobileReviewCount;
-      this.productDetails.productImageUrl = productDetails.mobileImageUrl;
-      this.productDetails.productPrice = productDetails.mobilePrice;
-      this.productDetails.productLowestPrice = productDetails.mobileLowestPrice;
+      this.productDetails = productDetails;
     });
 
   }
