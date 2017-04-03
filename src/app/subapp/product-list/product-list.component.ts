@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { SideNavbarService } from "app/subapp/side-navbar.service";
+import { ActivatedRoute, Params } from "@angular/router";
 
 @Component({
   selector: 'app-product-list',
@@ -12,9 +13,21 @@ export class ProductListComponent implements OnInit {
   @ViewChild("sidenav") sidenav;
   navBarMode = "side";
 
-  constructor(private sideNabarService: SideNavbarService) { }
+  constructor(private activatedRoute: ActivatedRoute,
+    private sideNabarService: SideNavbarService) { }
 
   ngOnInit() {
+    this.activatedRoute.params.subscribe((params: Params) => {
+        let brandName = params['brand'];
+        let rangeStart = params['start'];
+        let rangeEnd = params['end'];
+        if (brandName) {
+          console.log("Brand Name is  "+ brandName);
+        } else if (rangeStart !== undefined || rangeStart || rangeEnd) {
+          console.log("Price Range:  Start : "+ rangeStart + "  End : "+ rangeEnd );
+        }
+      });
+
     this.productList.push({ id: "1111", price: "1200", name: "Product Name", imageUrl: "../../../assets/images/img250.png", updated: "12/12/12" })
     this.productList.push({ id: "1111", price: "1200", name: "Product Name", imageUrl: "../../../assets/images/img250.png", updated: "12/12/12" })
     this.productList.push({ id: "1111", price: "1200", name: "Product Name", imageUrl: "../../../assets/images/img250.png", updated: "12/12/12" })

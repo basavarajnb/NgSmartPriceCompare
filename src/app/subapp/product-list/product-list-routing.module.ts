@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductListComponent } from "app/subapp/product-list/product-list.component";
 const productListRoutes: Routes = [
     { path: 'products', component: ProductListComponent },
-    { path: 'products/:id', component: ProductListComponent }
+    { path: 'products/brand/:brand', component: ProductListComponent },
+    { path: 'products/range/:start/:end', component: ProductListComponent }
 ];
 @NgModule({
     imports: [

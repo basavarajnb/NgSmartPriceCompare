@@ -1,64 +1,22 @@
 <div style="width: 240px">
   <nav>
-    <h3>Form Controls </h3>
-    <ul>
-      <!--template bindings={}-->
-      <li>
-        <a routerlinkactive="docs-component-viewer-sidenav-item-selected" href="/components/component/autocomplete">
-            Autocomplete
-          </a>
-      </li>
-      <li>
-        <a routerlinkactive="docs-component-viewer-sidenav-item-selected" href="/components/component/checkbox" class="">
-             fjftu frtfuh fjrtu  ryr rt ruru 6ru r6u t6ru ru u r
-          </a>
-      </li>
-      <li>
-        <a routerlinkactive="docs-component-viewer-sidenav-item-selected" href="/components/component/input">
-            Input
-          </a>
-      </li>
-      <li>
-        <a routerlinkactive="docs-component-viewer-sidenav-item-selected" href="/components/component/radio">
-            Radio button
-          </a>
-      </li>
-      <li>
-        <a routerlinkactive="docs-component-viewer-sidenav-item-selected" href="/components/component/select">
-            Select
-          </a>
-      </li>
-      <li>
-        <a routerlinkactive="docs-component-viewer-sidenav-item-selected" href="/components/component/slider">
-            Slider
-          </a>
-      </li>
-      <li>
-        <a routerlinkactive="docs-component-viewer-sidenav-item-selected" href="/components/component/slide-toggle">
-            Slide toggle
-          </a>
-      </li>
-    </ul>
-  </nav>
-  <nav>
-    <h3>Navigation</h3>
-    <ul>
-      <!--template bindings={}-->
-      <li>
-        <a routerlinkactive="docs-component-viewer-sidenav-item-selected" href="/components/component/menu">
-            Menu
-          </a>
-      </li>
-      <li>
-        <a routerlinkactive="docs-component-viewer-sidenav-item-selected" href="/components/component/sidenav" class="docs-component-viewer-sidenav-item-selected">
-            Sidenav
-          </a>
-      </li>
-      <li>
-        <a routerlinkactive="docs-component-viewer-sidenav-item-selected" href="/components/component/toolbar">
-            Toolbar
-          </a>
-      </li>
-    </ul>
+    <div *ngIf="navData.brands.length > 0">
+      <h3>Brand</h3>
+      <ul>
+        <li *ngFor="let brand of navData.brands; let i = index;">
+          <a [routerLink]="brand.link"> {{brand.label}}</a>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="navData.priceRanges.length > 0">
+      <h3>Brand</h3>
+      <ul>
+        <li *ngFor="let priceRange of navData.priceRanges; let i = index;">
+          <a [routerLink]="priceRange.link"> {{priceRange.label}}</a>
+        </li>
+      </ul>
+    </div>
+
+    
   </nav>
 </div>
