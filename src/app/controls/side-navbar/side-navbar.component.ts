@@ -7,6 +7,8 @@ import { SideNavbarService } from "app/subapp/side-navbar.service";
   styleUrls: ['./side-navbar.component.css']
 })
 export class SideNavbarComponent implements OnInit {
+  public collaseBrandList = true;
+  public collasePriceRangeList = true;
   navData = {
     brands: [
       { label: 'Samsung', link: '/products/brand/Samsung'},
@@ -25,6 +27,14 @@ export class SideNavbarComponent implements OnInit {
     this.sideNabarService.sideNavbarToggele.subscribe((val) => {
 
     });
+  }
+
+  toggleCollaseBrandList() {
+    this.collaseBrandList = !this.collaseBrandList
+  }
+
+  toggleCollasePriceRangeList () {
+    this.collasePriceRangeList = !this.collasePriceRangeList;
   }
 
 }
