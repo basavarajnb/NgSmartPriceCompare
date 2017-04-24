@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import { Router } from '@angular/router';
 import { LoginChangesService } from "app/services/login-changes.service";
-import { Subscription } from "rxjs/Subscription";
+import { UserAuthService } from "app/services/user.service";
 
 @Component({
   selector: 'app-members',
@@ -12,17 +12,16 @@ import { Subscription } from "rxjs/Subscription";
 export class MembersComponent implements OnInit, OnDestroy {
 
   name: any;
-  state: string = '';
-  private subscription: Subscription = new Subscription();
+  state: string = "";
 
   constructor(public af: AngularFire,
     private router: Router,
-    private loginChanges: LoginChangesService) {
+    private userAuthService: UserAuthService) {
   }
 
   logout() {
     this.af.auth.logout();
-    this.loginChanges.loginChangesSubject.next(false);
+    this.userAuthService.isUserSignedIn = false;
     console.log('logged out');
     this.router.navigateByUrl('/login');
   }
@@ -31,21 +30,13 @@ export class MembersComponent implements OnInit, OnDestroy {
     console.log("MembersComponent OnInit");
     this.af.auth.subscribe(auth => {
       if (auth) {
-        this.loginChanges.loginChangesSubject.next(true);
+        this.userAuthService.isUserSignedIn = true;
         this.name = auth;
         console.log(auth);
       }
     });
-
-    this.subscription.add(this.loginChanges.signOutClickSubject.subscribe((signOutFlag) => {
-      console.log("Inside SignOut Click Subj Subscrice!");
-      if (signOutFlag === true) {
-        this.logout();
-      }
-    }));
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
   }
 }

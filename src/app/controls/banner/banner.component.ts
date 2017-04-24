@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { LoginChangesService } from "app/services/login-changes.service";
 import { Router } from "@angular/router";
+import { UserAuthService } from "app/services/user.service";
 
 @Component({
   selector: 'app-banner',
@@ -9,31 +10,24 @@ import { Router } from "@angular/router";
 })
 export class BannerComponent implements OnInit {
   @Input() brandName;
-  signInOrOut: string;
-  constructor(private loginchnages: LoginChangesService,
+  socialIcons = [
+    { imageFile: 'assets/images/social-fb-bw.png', alt: 'Facebook', link: 'http://www.facebook.com' },
+    { imageFile: 'assets/images/social-google-bw.png', alt: 'Google +', link: 'http://www.google.com' },
+    { imageFile: 'assets/images/social-twitter-bw.png', alt: 'Twitter', link: 'http://www.twitter.com' }
+  ];
+  constructor(private userAuthService: UserAuthService,
     private router: Router) { }
 
   ngOnInit() {
-    this.loginchnages.loginChangesSubject.subscribe((isSingedIn) => {
-      if (isSingedIn) {
-        this.signInOrOut = "Sign Out"
-      }
-      else {
-        this.signInOrOut = "Sign In"
-      }
-    });
   }
 
   onButtonClick() {
     alert("Return to Home");
   }
-  onSignInorOutClick() {
-    if (this.signInOrOut == "Sign Out") {
-      console.log("Sign Out Button is clicked!");
-      this.loginchnages.signOutClickSubject.next(true);
-    }
-    else {
-      this.router.navigateByUrl('/login');
-    }
+  onSignInClick() {
+    this.router.navigateByUrl('/login');
+  }
+  onSignOutClick() {
+    this.userAuthService.logout();
   }
 }
