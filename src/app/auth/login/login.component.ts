@@ -1,25 +1,25 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, HostBinding, OnDestroy } from '@angular/core';
 import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import { Router } from '@angular/router';
-import { moveIn } from '../router.animations';
+import { Subscription } from "rxjs/Subscription";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  animations: [moveIn()],
-  host: { '[@moveIn]': '' }
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
 
   error: any;
-    constructor(public af: AngularFire,private router: Router) {
+  private subscription: Subscription = new Subscription();
 
-      this.af.auth.subscribe(auth => { 
-      if(auth) {
+  constructor(public af: AngularFire, private router: Router) {
+
+    this.subscription.add(this.af.auth.subscribe(auth => {
+      if (auth) {
         this.router.navigateByUrl('/members');
       }
-    });
+    }));
   }
 
   loginFb() {
@@ -27,10 +27,10 @@ export class LoginComponent implements OnInit {
       provider: AuthProviders.Facebook,
       method: AuthMethods.Popup,
     }).then(
-        (success) => {
+      (success) => {
         this.router.navigate(['/members']);
       }).catch(
-        (err) => {
+      (err) => {
         this.error = err;
       })
   }
@@ -40,16 +40,20 @@ export class LoginComponent implements OnInit {
       provider: AuthProviders.Google,
       method: AuthMethods.Popup,
     }).then(
-        (success) => {
+      (success) => {
         this.router.navigate(['/members']);
       }).catch(
-        (err) => {
+      (err) => {
         this.error = err;
       })
   }
 
 
   ngOnInit() {
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
 }
