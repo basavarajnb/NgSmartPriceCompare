@@ -1,11 +1,14 @@
 .card-img-top {
     max-width: 100%;
-	height: auto;
+	max-height: 250px;
 	width: auto; 
 }
 .card-title {
-    max-width: 220px;
+    max-width: 100%;
 }
 .card {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+.card-block {
+    min-height: 100px;
 }

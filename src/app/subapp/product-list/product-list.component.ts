@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { SideNavbarService } from "app/subapp/side-navbar.service";
 import { ActivatedRoute, Params } from "@angular/router";
+import { ProductListService } from "app/subapp/product-list/services/product-list.service";
 
 @Component({
   selector: 'app-product-list',
@@ -14,7 +15,8 @@ export class ProductListComponent implements OnInit {
   navBarMode = "side";
 
   constructor(private activatedRoute: ActivatedRoute,
-    private sideNabarService: SideNavbarService) { }
+    private sideNabarService: SideNavbarService,
+    private productListService: ProductListService) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: Params) => {
@@ -22,25 +24,22 @@ export class ProductListComponent implements OnInit {
         let rangeStart = params['start'];
         let rangeEnd = params['end'];
         if (brandName) {
+          this.productListService.getBrandProductList(brandName).subscribe((productListArray) => {
+            this.setProductList(productListArray);
+          });
           console.log("Brand Name is  "+ brandName);
         } else if (rangeStart !== undefined || rangeStart || rangeEnd) {
           console.log("Price Range:  Start : "+ rangeStart + "  End : "+ rangeEnd );
         }
       });
-
-    this.productList.push({ id: "1111", price: "1200", name: "Product Name", imageUrl: "../../../assets/images/img250.png", updated: "12/12/12" })
-    this.productList.push({ id: "1111", price: "1200", name: "Product Name", imageUrl: "../../../assets/images/img250.png", updated: "12/12/12" })
-    this.productList.push({ id: "1111", price: "1200", name: "Product Name", imageUrl: "../../../assets/images/img250.png", updated: "12/12/12" })
-    this.productList.push({ id: "1111", price: "1200", name: "Product Name", imageUrl: "../../../assets/images/img250.png", updated: "12/12/12" })
-    this.productList.push({ id: "1111", price: "1200", name: "Product Name", imageUrl: "../../../assets/images/img250.png", updated: "12/12/12" })
-    this.productList.push({ id: "1111", price: "1200", name: "Product Name", imageUrl: "../../../assets/images/img250.png", updated: "12/12/12" })
-    this.productList.push({ id: "1111", price: "1200", name: "Product Name", imageUrl: "../../../assets/images/img250.png", updated: "12/12/12" })
-    this.productList.push({ id: "1111", price: "1200", name: "Product Name", imageUrl: "../../../assets/images/img250.png", updated: "12/12/12" })
-    this.productList.push({ id: "2222", price: "2200", name: "Product Name", imageUrl: "../../../assets/images/img250.png", updated: "13/13/13" })
-    this.productList.push({ id: "3333", price: "3200", name: "Product Name", imageUrl: "../../../assets/images/img250.png", updated: "14/14/14" })
-
     this.sideNabarService.sideNavbarToggele.subscribe((val) => {
       this.sidenav.toggle();
+    });
+  }
+
+  setProductList = (productListArray) => {
+    productListArray.forEach(element => {
+      this.productList.push(element);
     });
   }
 

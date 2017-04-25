@@ -3,11 +3,11 @@
     <div *ngFor="let item of productList" class="col-sp-12 col-md-6 col-lg-3 p-1">
       <div class="card  ">
         <div class="product-image-container border" style="display: flex;">
-          <img alt="Card image cap" class="card-img-top mx-auto" [src]="item.imageUrl">
+          <img alt="card-img-top" class="card-img-top mx-auto" [src]="item.productImageUrl">
         </div>
         <div class="card-block p-2">
-          <h6 class="card-title">{{item.name}}</h6>
-          <p class="card-text">{{item.price}}</p>
+          <h6 class="card-title"><a [href]="item.productUrl" > {{item.productName}}</a></h6>
+          <p class="card-text">{{item.productPrice}}</p>
         </div>
         <div class="card-footer p-2">
           <small class="text-muted">{{item.updated}}</small>
@@ -15,4 +15,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> 
